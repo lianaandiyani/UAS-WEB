@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triwijaya Computindo</title>
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        
+        nav .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+        
+        nav .menu ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        nav .menu ul li {
+            margin-left: 20px;
+        }
+        
+        nav .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav .menu ul li a:hover {
+            background-color: #007bff;
+        }
+        
+        nav .menu ul li a.tbl-biru {
+            background-color: #007bff;
+            color: #fff;
+        }
+        
+        /* Home Section Styles */
+        #home {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 0;
+            background-color: #fff;
+            background-image: url('https://img.freepik.com/free-vector/technology-background-with-glowing-low-polygonal-earth-planet-digital-wireframe-big-data-global-network-business-concept-blue_127544-866.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        
+        #home img {
+            max-width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        #home .kolom {
+            width: 45%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        #home .kolom p.deskripsi {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+        
+        #home .kolom h2 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        
+        #home .kolom p {
+            color: #ddd;
+            line-height: 1.6;
+        }
+        
+        #home .kolom .tbl-pink {
+            background-color: #ff007b;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        #home .kolom .tbl-pink:hover {
+            background-color: #e6006b;
+        }
+        
+        /* Services Section Styles */
+        #services {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+        
+        #services .kolom {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        #services .kolom p.deskripsi {
+            font-size: 1.2em;
+            color: #555;
+        }
+        
+        #services .kolom h2 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        
+        #services .service-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        #services .kartu-service {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(30% - 20px);
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        #services .kartu-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        #services .kartu-service img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+        
+        #services .kartu-service p {
+            font-size: 1.1em;
+            color: #333;
+        }
+        
+        /* Partners Section Styles */
+        #partners {
+            padding: 50px 0;
+            background-color: #fff;
+        }
+        
+        #partners .kolom {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        #partners .kolom p.deskripsi {
+            font-size: 1.2em;
+            color: #555;
+        }
+        
+        #partners .kolom h2 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        
+        #partners .partner-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        #partners .kartu-partner {
+            width: calc(30% - 20px);
+            text-align: center;
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        #partners .kartu-partner:hover {
+            transform: scale(1.05);
+        }
+        
+        #partners .kartu-partner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        footer .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        footer .footer-section {
+            flex: 1 1 300px;
+            text-align: left;
+        }
+        
+        footer .footer-section h3 {
+            margin-bottom: 10px;
+        }
+        
+        footer .footer-section .location, footer .footer-section .contact, footer .footer-section .sosmed {
+            margin-bottom: 20px;
+        }
+        
+        footer .footer-section img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+        
+        footer .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        footer .footer-section a:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Copyright Styles */
+        #copyright {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            nav .menu ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav .menu ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+            
+            #home {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            
+            #home img {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            #home .kolom {
+                width: 100%;
+            }
+            
+            #services .service-list, #partners .partner-list {
+                justify-content: center;
+            }
+            
+            #services .kartu-service, #partners .kartu-partner {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="#">Triwijaya Computindo</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="tbl-biru">Sign Up</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+    <div class="wrapper">
+        <!-- Home Section -->
+        <section id="home">
+            <img src="https://img.freepik.com/free-vector/technology-background-with-glowing-low-polygonal-earth-planet-digital-wireframe-big-data-global-network-business-concept-blue_127544-866.jpg" alt="Global IT Support">
+            <div class="kolom">
+                <p class="deskripsi">Professional IT Support</p>
+                <h2>Reliable IT Solutions for Your Business</h2>
+                <p>We offer a range of IT support services to help your business thrive in the digital age.</p>
+                <p><a href="#services" class="tbl-pink">Learn More</a></p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="kolom">
+                <p class="deskripsi">Our Services</p>
+                <h2>What We Offer</h2>
+            </div>
+            <div class="service-list">
+                <div class="kartu-service">
+                    <img src="https://www.pngitem.com/pimgs/m/480-4801261_business-analysis-business-analyst-icon-hd-png-download.png" alt="Service 1">
+                    <h3>Business Analyst</h3>
+                    <p>A Business Analyst is someone who is in charge of helping a business analyze the company's processes, systems, products, and services to then improve and make profitable decisions for the business based on data analysis.</p>
+                </div>
+                <div class="kartu-service">
+                    <img src="https://www.isysl.net/sites/default/files/inline-images/image007_1.png" alt="Service 2">
+                    <h3>IT Service Management</h3>
+                    <p>IT service management provides the strategic interface with assigned areas of the IT Strategy Development, Design, Transition, Operation and Continual Service Improvement within the ITIL framework.</p>
+                </div>
+                <div class="kartu-service">
+                    <img src="https://th.bing.com/th/id/OIP.710GnaSCG6Czc5IotWkxOQHaFS?rs=1&pid=ImgDetMain" alt="Service 3">
+                    <h3>Software Developer</h3>
+                    <p>A software developer is someone who develops software or software.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section id="partners">
+            <div class="kolom">
+                <p class="deskripsi">Our Partners</p>
+                <h2>Our Trusted Partners</h2>
+            </div>
+            <div class="partner-list">
+                <div class="kartu-partner">
+                    <img src="https://seekcdn.com/pacman/company-profiles/logos/432649/cisco-systems-logo.png" alt="Cisco Systems">
+                </div>
+                <div class="kartu-partner">
+                    <img src="https://corra.com/wp-content/uploads/Sap-Logo--e1530285069227.png" alt="SAP">
+                </div>
+                <div class="kartu-partner">
+                    <img src="https://th.bing.com/th?id=OIP.VsGZUrNNHrzvAhAr-RyzTgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="IBM">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="wrapper">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p class="contact">City Of Bekasi, Australia</p>
+                <p class="contact">masfarhan510@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="sosmed">
+                    <a href="#"><img src="https://via.placeholder.com/50x50" alt="Facebook"></a>
+                    <a href="#"><img src="https://via.placeholder.com/50x50" alt="Twitter"></a>
+                    <a href="#"><img src="https://via.placeholder.com/50x50" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright Section -->
+    <div id="copyright">
+        <div class="wrapper">
+            <p>&copy; 2024 Triwijaya Computindo. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
